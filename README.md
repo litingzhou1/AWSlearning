@@ -102,9 +102,9 @@ IAM(identity and Acess Management)
     - 考虑到系统整体可用性，今后需要将服务部署到多个AZ区，所以应该提前做好IP地址的规划
 
 ### 建立VPC - 建立自己的IDC
-* 知识点
++ 知识点
     + 建立VPC(Virtual Private Cloud)
-        - 可以把VPC理解为我们自己私有的IDC(互联网数据中心)
+        + 可以把VPC理解为我们自己私有的IDC(互联网数据中心)
 网段规划：
 + CIDR
   * 172.16.0.0/16 <- 看图说话
