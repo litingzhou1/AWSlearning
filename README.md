@@ -1,14 +1,13 @@
 # AWSlearning
 
-## 基础知识
-
+## Class1
+### 基础知识
 + Linux 基础知识
 + 一种编程语言(Node.js, Python, GO, Java, ect.)
 + 网络基础知识(TCP/IP, HTTP/HTTPS, SSH/SCP, Network, ect.)
 + 数据库基础知识 (RDB, SQL, NOSQL, etc.)
 + 容器基础知识 (Docker, K8S)
-
-## 课件内容
+### 课件内容
 01. 组建规划网络
     + VPC - 虚拟网络
     + Subnet - 子网络
@@ -55,14 +54,8 @@
     + CLI
     + SDK（Node.js，Python，Go）
 
-## 课程目标：
-01. 系统架构能力
-    + 实现弹性架构
-    + 实现高可用架构
-    + 实现安全架构
-    + 实现成本优化
-
-## 用户
+## Class 2
+### 用户
 避免使用超级管理员root根账号，应该分配适当有权账号进行工作管理
 01. root 根账户
     + 控制其他管理账户时
@@ -81,18 +74,34 @@ IAM(identity and Acess Management)
         - 用户 - 添加到组 - 创建用户
 登陆时用IAM用户
 
-## 设置CloudWatch - 监控成本
-## 设置CloudTrail - 记录系统中用户或API的活动行为（Who，When，What）- 用于企业
+### 设置CloudWatch - 监控成本
+
+### 设置CloudTrail - 记录系统中用户或API的活动行为（Who，When，What）- 用于企业
 
 注意点
-+ CloudTrail 本体免费(真实的谎言)，如果记录特殊的分析事件需要另行付费
-+ CloudTrail 默认免费记录90天操作日志
-+ 开启系统跟踪服务后，日志会写入S3存储桶，S3存储桶另行收费
+    + CloudTrail 本体免费(真实的谎言)，如果记录特殊的分析事件需要另行付费
+    + CloudTrail 默认免费记录90天操作日志
+    + 开启系统跟踪服务后，日志会写入S3存储桶，S3存储桶另行收费
 
+### 设计一个Web应用的网络结构 
+知识点：
+    + 设计简单的网络，部署简单的web应用
 
+### 网络IP范围设计 - IP Network
 
+### 区域（Regions）和可用区（Availability Zones）
+    + 区域（Regions）
+    + 可用区（Availability Zones
+        - 一个区分成多个可用区
+        - 保险起见，企业设计系统要多个区和多个可用区
 
 # 系统架构
+## 目标：
+01. 系统架构能力
+    + 实现弹性架构
+    + 实现高可用架构
+    + 实现安全架构
+    + 实现成本优化
 
 ## 设计系统架构需要考虑的问题
 + 需要几台服务器
@@ -111,4 +120,4 @@ IAM(identity and Acess Management)
 
 ![system architec](/images/basic_system_arcte.png)
 
-# 系统架构
+# 
