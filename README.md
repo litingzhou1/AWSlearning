@@ -81,11 +81,13 @@ IAM(identity and Acess Management)
         - 用户 - 添加到组 - 创建用户
 登陆时用IAM用户
 
-## 设置CloudWatch - 监控成本：
-## 设置CloudTrail - 监控成本：
-记录系统中用户或API的活动行为（Who，When，What）
+## 设置CloudWatch - 监控成本
+## 设置CloudTrail - 记录系统中用户或API的活动行为（Who，When，What）- 用于企业
 
 注意点
++ CloudTrail 本体免费(真实的谎言)，如果记录特殊的分析事件需要另行付费
++ CloudTrail 默认免费记录90天操作日志
++ 开启系统跟踪服务后，日志会写入S3存储桶，S3存储桶另行收费
 
 
 
