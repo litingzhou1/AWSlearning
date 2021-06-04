@@ -80,4 +80,4 @@
 + 如何提高服务可用性(负载均衡，多区域部署)
 + 如何节省成本(性价比)
 
-![GitHub Logo](/images/basic_system_arcte.png)
+![system architec](/images/basic_system_arcte.png)
