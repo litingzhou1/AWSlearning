@@ -55,17 +55,13 @@
     + CLI
     + SDK（Node.js，Python，Go）
 
-## 深度学习AWS
-https://deeplearnaws.com/
-
-
 ## 课程目标：
 01. 系统架构能力
     + 实现弹性架构
     + 实现高可用架构
     + 实现安全架构
     + 实现成本优化
-    
+
 
 # 系统架构
 
@@ -83,3 +79,5 @@ https://deeplearnaws.com/
 + 如果与本地连接(公司内网和云端通信机制)
 + 如何提高服务可用性(负载均衡，多区域部署)
 + 如何节省成本(性价比)
+
+![GitHub Logo](/images/basic_system_arcte.png)
