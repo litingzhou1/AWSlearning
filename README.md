@@ -66,12 +66,12 @@
     + 管理AWS资源（EC2，RDB，...）
 
 IAM(identity and Acess Management)
-    + 简化用户登录URL - deeplearnaws
-        - 自定义URL里的账户ID
-    + 建立管理员组 - lcadmin-group
-        - 组 -> AdminstationAcess
-    + 建立普通管理员 - lcadmin
-        - 用户 - 添加到组 - 创建用户
++ 简化用户登录URL - deeplearnaws
+    - 自定义URL里的账户ID
++ 建立管理员组 - lcadmin-group
+    - 组 -> AdminstationAcess
++ 建立普通管理员 - lcadmin
+    - 用户 - 添加到组 - 创建用户
 登陆时用IAM用户
 
 ### 设置CloudWatch - 监控成本
@@ -79,21 +79,21 @@ IAM(identity and Acess Management)
 ### 设置CloudTrail - 记录系统中用户或API的活动行为（Who，When，What）- 用于企业
 
 注意点
-    + CloudTrail 本体免费(真实的谎言)，如果记录特殊的分析事件需要另行付费
-    + CloudTrail 默认免费记录90天操作日志
-    + 开启系统跟踪服务后，日志会写入S3存储桶，S3存储桶另行收费
++ CloudTrail 本体免费(真实的谎言)，如果记录特殊的分析事件需要另行付费
++ CloudTrail 默认免费记录90天操作日志
++ 开启系统跟踪服务后，日志会写入S3存储桶，S3存储桶另行收费
 
 ### 设计一个Web应用的网络结构 
 知识点：
-    + 设计简单的网络，部署简单的web应用
++ 设计简单的网络，部署简单的web应用
 
 ### 网络IP范围设计 - IP Network
 
 ### 区域（Regions）和可用区（Availability Zones）
-    + 区域（Regions）
-    + 可用区（Availability Zones
-        - 一个区分成多个可用区
-        - 保险起见，企业设计系统要多个区和多个可用区
++ 区域（Regions）
++ 可用区（Availability Zones
+    - 一个区分成多个可用区
+    - 保险起见，企业设计系统要多个区和多个可用区
 
 # 系统架构
 ## 目标：
