@@ -62,6 +62,33 @@
     + 实现安全架构
     + 实现成本优化
 
+## 用户
+避免使用超级管理员root根账号，应该分配适当有权账号进行工作管理
+01. root 根账户
+    + 控制其他管理账户时
+    + 账号契约解约时
+    + 账号付款时
+02. 普通管理员
+    + 管理一般用户（User，Group，Role）
+    + 管理AWS资源（EC2，RDB，...）
+
+IAM(identity and Acess Management)
+    + 简化用户登录URL - deeplearnaws
+        - 自定义URL里的账户ID
+    + 建立管理员组 - lcadmin-group
+        - 组 -> AdminstationAcess
+    + 建立普通管理员 - lcadmin
+        - 用户 - 添加到组 - 创建用户
+登陆时用IAM用户
+
+## 设置CloudWatch - 监控成本：
+## 设置CloudTrail - 监控成本：
+记录系统中用户或API的活动行为（Who，When，What）
+
+注意点
+
+
+
 
 # 系统架构
 
@@ -81,3 +108,5 @@
 + 如何节省成本(性价比)
 
 ![system architec](/images/basic_system_arcte.png)
+
+# 系统架构
