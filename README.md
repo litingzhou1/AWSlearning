@@ -103,8 +103,8 @@ IAM(identity and Acess Management)
 
 ### 建立VPC - 建立自己的IDC
 * 知识点
-+ 建立VPC(Virtual Private Cloud)
-  - 可以把VPC理解为我们自己私有的IDC(互联网数据中心)
+    + 建立VPC(Virtual Private Cloud)
+        - 可以把VPC理解为我们自己私有的IDC(互联网数据中心)
 网段规划：
 + CIDR
   * 172.16.0.0/16 <- 看图说话
