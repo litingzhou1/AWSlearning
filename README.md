@@ -173,11 +173,11 @@ IAM(identity and Acess Management)
     + Git
 
     ''' bash
-    # Amazon Linux 2
+    ##### Amazon Linux 2
     ssh -i ./deeplearnaws-ssh-key.pem ec2-user@54.173.158.89
-    # 登陆安全信息
+    ##### 登陆安全信息
     touch 
-    # 系统升级
+    ##### 系统升级
     sudo yum update -y
     # 确认linux 系统版本
     cat /etc/os-release
