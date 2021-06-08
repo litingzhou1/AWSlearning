@@ -122,17 +122,71 @@ IAM(identity and Acess Management)
 ### 建立互联网网关 - 公开网络和私有网络的主要区别，上面创建的两个subnet现在都不是公开的，现在要创建网关
 建立互联网网关，绑定到VPC，使VPC子网可以连上互联网
 + 绑定到VPC(deeplearnaws-vpc)上
-    + 建立互联网网关: *deeplearnaws-igw*
+    + 建立互联网网关: *deeplearnaws-igw*    （igw - internet gateway）
     + 绑定到VPC *deeplearnaws-vpc* 上
 
 ### 建立公网路由表 - 让我们的子网连接到互联网
-+ RTB: deeplearnaws-web-rtb
+
++ RTB: deeplearnaws-web-rtb 
   * VCP: deeplearnaws-vpc
   * Rule: 加入 deeplearnaws-igw
 + 把新路由绑定到 deeplearnaws-web-1a 子网
 
+### 两个防火墙 - 网络ACL和安全组SG （两层数据过滤）
+* 网络存取控制列表 - ACL（侦听所有的数据流量，针对整个VPC生效）
+* 安全组 - Security Group（针对AWS资源生效）
+* 任务：
+    + Name: deeplearnaws-web-sg
+    + Port: SSH(22)
+
 ### 公私网
 
+## Class 3
+### 建立EC2 - 云端服务器
+建立一个公网可访问的EC2服务器实例
++ EC2实例具体设置
+    + Amazon Linux 2 AMI - Amazon Machine Image
+    + t2.micro 
+    + deeplearnaws-vpc - EC2 装在哪个VPC
+    + deeplearnaws-web-1a - EC2 装在哪个子网
+    + 自动分配公有 IP
+    + 内网IP: 172.16.10.10/32
+    + Name: deeplearnaws-web1a - 服务器名
+    + 密钥对: deeplearnaws-ssh-key - 
++ SSH连接
+    ```bash
+    $ cp ~/Downloads/deeplearnaws-ssh-key.pem ./
+    $ chmod 400 deeplearnaws-ssh-key.pem - 设置本地权限
+    # Amazon Linux 2
+    $ ssh -i ./deeplearnaws-ssh-key.pem ec2-user@13.115.167.6
+    >
+    ```
+### 建立EC2 - 云端服务器
+建立AMI - 克隆自己的系统
++ 知识点：
+    * 在Amazon Linux 2上安装必要的软件包
+    * 打包Amazon Linux 2成AMI(Amazon Machine Image)
+    * 从AMI启动我们的EC2实例
++ 在Amazon Linux 2上安装必要的软件包
+    + Docker
+    + Node.js
+    + Git
+
+    ''' bash
+    # Amazon Linux 2
+    ssh -i ./deeplearnaws-ssh-key.pem ec2-user@54.173.158.89
+    # 登陆安全信息
+    touch 
+    # 系统升级
+    sudo yum update -y
+    # 确认linux 系统版本
+    cat /etc/os-release
+    ###################################################
+    # Docker
+    sudo amazon-linux-extras install -y docker
+    '''
++ 将系统打包成AMI
+    - Name: deeplearnaws-ami
 
 ### 区域（Regions）和可用区（Availability Zones）
 + 区域（Regions）
