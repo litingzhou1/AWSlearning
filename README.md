@@ -87,29 +87,51 @@ IAM(identity and Acess Management)
 知识点：
 + 设计简单的网络，部署简单的web应用
 
+
+### 建立VPC - 建立自己的IDC（互联网数据中心）
++ 知识点
+    + 建立VPC(Virtual Private Cloud)
+        + 可以把VPC理解为我们自己私有的IDC(互联网数据中心)
++ 网段规划：
+    + CIDR（无类别域间路由：是一个用于给用户分配IP地址以及在互联网上有效地路由IP数据包的对IP地址进行归类的方法）
+        * 172.16.0.0/16 <- 看图说话
+    + 标签
+        * Name:deeplearnaws-vpc
+
 ### 网络IP范围设计 - IP Network
 设计系统分成两个子网
-+ 公有网络 - 用于对外公开的服务器 - Web， API服务器
++ 公开网络 - 用于对外公开的服务器 - Web， API服务器
     - 网段决定:
         - 172.16.10.0/24
         - 172.16.11.0/24
+        - ap-northeast-web-1a
+    - 标签
+        - Name：ap-northeast-web-1a （AR）
 + 私有网络 - 用于内部使用的服务器， 如：DB， Redis等
     - 网段决定:
         - 172.16.20.0/24
         - 172.16.21.0/24
+        - ap-northeast-web-db-1a （AR）
 + 区别：公有网络的服务器外部可以通过IP地址访问，容易被黑。私有网络，外部无法通过IP访问，可以通过公有网络服务器访问
 + 扩展性考虑
     - 考虑到系统整体可用性，今后需要将服务部署到多个AZ区，所以应该提前做好IP地址的规划
 
-### 建立VPC - 建立自己的IDC
-+ 知识点
-    + 建立VPC(Virtual Private Cloud)
-        + 可以把VPC理解为我们自己私有的IDC(互联网数据中心)
-网段规划：
-+ CIDR
-  * 172.16.0.0/16 <- 看图说话
-+ 标签
-  * Name:deeplearnaws-vpc
+子网所属VPC
++  deeplearnaws-vpc 
+
+### 建立互联网网关 - 公开网络和私有网络的主要区别，上面创建的两个subnet现在都不是公开的，现在要创建网关
+建立互联网网关，绑定到VPC，使VPC子网可以连上互联网
++ 绑定到VPC(deeplearnaws-vpc)上
+    + 建立互联网网关: *deeplearnaws-igw*
+    + 绑定到VPC *deeplearnaws-vpc* 上
+
+### 建立公网路由表 - 让我们的子网连接到互联网
++ RTB: deeplearnaws-web-rtb
+  * VCP: deeplearnaws-vpc
+  * Rule: 加入 deeplearnaws-igw
++ 把新路由绑定到 deeplearnaws-web-1a 子网
+
+### 公私网
 
 
 ### 区域（Regions）和可用区（Availability Zones）
